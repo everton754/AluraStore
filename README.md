@@ -65,7 +65,7 @@ Aqui estão alguns dos principais gráficos gerados no notebook, acompanhados de
 Siga os passos abaixo para reproduzir a análise no Google Colab:
 
 1. **Acesse o Notebook:**
-   - Abra o arquivo `AluraStoreBr.ipynb` no Google Colab através deste [link](https://colab.research.google.com/drive/example-link) ou faça upload do arquivo manualmente.
+   - Abra o arquivo `AluraStoreBr.ipynb` no Google Colab através deste [link](https://colab.research.google.com/drive/1IoRY3Mm_MKhmqnlqHWIPf17S8Qw0-pCB?usp=sharing) ou faça upload do arquivo manualmente.
 
 2. **Carregue os Dados:**
    - Faça upload do arquivo `vendas_alurastorebr.csv` no ambiente do Colab:
