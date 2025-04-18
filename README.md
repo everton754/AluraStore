@@ -36,7 +36,7 @@ Aqui estão alguns dos principais gráficos gerados no notebook, acompanhados de
 ### 1. Tendência de Faturamento Mensal por Loja
 - **Gráfico de Linha Interativo (Plotly):**
   - Mostra o faturamento mensal de cada loja (Loja 1 a Loja 4) entre jan/2020 e mar/2023.
-  - Exemplo: ![Tendências de Faturamento](https://via.placeholder.com/600x400.png?text=Tendência+de+Faturamento)
+  - Exemplo: ![Tendências de Faturamento](Imagens/plot2.png)
 - **Insights:**
   - Picos de vendas em julho/2022 (~R$ 50.000–R$ 60.000), possivelmente devido a alta demanda por eletrônicos e móveis.
   - Quedas significativas em junho/2021 e junho/2022 (~R$ 20.000), sugerindo baixa sazonalidade.
@@ -45,7 +45,7 @@ Aqui estão alguns dos principais gráficos gerados no notebook, acompanhados de
 ### 2. Vendas por Categoria de Produto
 - **Gráfico de Barras:**
   - Compara o total de unidades vendidas por categoria (ex.: Móveis, Eletrônicos, Eletrodomésticos).
-  - Exemplo: ![Vendas por Categoria](https://via.placeholder.com/600x400.png?text=Vendas+por+Categoria)
+  - Exemplo: ![Vendas por Categoria](Imagens/plot4.png)
 - **Insights:**
   - Loja 4 depende fortemente de Móveis (20,4%) e Eletrônicos (19,1%), mas tem desempenho fraco em Eletrodomésticos e Instrumentos Musicais.
   - Loja 1 lidera em diversificação de categorias, contribuindo para seu maior faturamento total (R$ 1,47 mi).
@@ -53,7 +53,7 @@ Aqui estão alguns dos principais gráficos gerados no notebook, acompanhados de
 ### 3. Distribuição de Avaliações por Loja
 - **Gráfico de Pizza:**
   - Exibe a média de avaliações dos clientes por loja.
-  - Exemplo: ![Distribuição de Avaliações](https://via.placeholder.com/600x400.png?text=Distribuição+de+Avaliações)
+  - Exemplo: ![Distribuição de Avaliações](Imagens/plot5.png)
 - **Insights:**
   - Loja 3 possui a melhor média de avaliações (4,0483), indicando alta satisfação do cliente.
   - Loja 4, com 3,9958, está entre as piores, sugerindo problemas na experiência do cliente.
