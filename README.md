@@ -1,90 +1,102 @@
-# Análise de Vendas da AluraStoreBr
-
-Bem-vindo ao notebook de análise de vendas da AluraStoreBr! Este projeto foi desenvolvido no Google Colab para explorar os dados de vendas de uma empresa fictícia, a AluraStoreBr, com o objetivo de fornecer insights acionáveis para otimizar suas estratégias de negócios.
-
 ---
 
 ## Propósito da Análise Realizada
 
-Esta análise exploratória tem como objetivo entender o desempenho das vendas da AluraStoreBr ao longo do tempo (jan/2020 a mar/2023). A análise busca:
+O objetivo deste notebook é apoiar a decisão de qual das quatro lojas do Senhor João deve ser vendida, utilizando análise de dados detalhada. A análise busca:
 
-- Identificar padrões sazonais nas vendas.
-- Avaliar o desempenho de diferentes categorias de produtos.
-- Analisar tendências de faturamento por loja.
-- Fornecer recomendações estratégicas, como a identificação de qual loja o Senhor João deveria vender com base em métricas financeiras e de satisfação do cliente.
+- Avaliar o desempenho financeiro de cada loja (faturamento total e tendências ao longo do tempo).
+- Identificar padrões sazonais e oscilações de vendas.
+- Investigar a diversificação e performance de categorias de produtos e produtos mais vendidos.
+- Comparar métricas de satisfação do cliente e eficiência logística (frete médio e sua proporção no faturamento).
+- Fornecer uma recomendação baseada em evidências, considerando fatores como rentabilidade, potencial de crescimento e experiência do cliente.
 
 ---
 
 ## Estrutura do Projeto e Organização dos Arquivos
 
-O projeto é organizado de forma simples e funcional no ambiente do Google Colab:
+O projeto está estruturado para facilitar manutenção, reprodutibilidade e análise detalhada:
 
-- **Notebook:** `AluraStoreBr.ipynb`
-  - Contém todo o código necessário para a análise, incluindo:
-    - Importação de bibliotecas (`pandas`, `matplotlib`, `plotly`).
-    - Carregamento e limpeza dos dados.
-    - Análise exploratória e geração de visualizações interativas.
-- **Dados:** `vendas_alurastorebr.csv`
-  - Arquivo CSV com os dados de vendas da AluraStoreBr, que deve ser carregado manualmente no ambiente do Colab. Inclui informações como faturamento mensal por loja, categorias de produtos e avaliações dos clientes.
+- **Notebook principal:**
+`AluraStoreBr.ipynb`
+Contém todo o pipeline de análise, desde a importação dos dados até a recomendação final, organizado em células e funções modulares.
+- **Arquivos de dados:**
+    - `loja_1.csv`, `loja_2.csv`, `loja_3.csv`, `loja_4.csv`
+Cada arquivo representa as vendas de uma loja distinta, incluindo colunas como Produto, Categoria, Preço, Frete, Data da Compra, Avaliação, entre outras.
+- **Dependências:**
+    - `pandas`, `matplotlib`, `seaborn`, `plotly`, `logging`
+Instaladas automaticamente no Google Colab ou via pip.
+- **Organização interna do notebook:**
+    - Funções de leitura, validação e limpeza dos dados.
+    - Funções para análise exploratória (estatísticas, tratamento de outliers, duplicatas, tipos de dados).
+    - Funções para visualização interativa (histogramas, boxplots, barras, linhas).
+    - Funções específicas para análise de categorias, produtos, tendências temporais, frete e avaliações.
+    - Pipeline principal que executa todas as etapas sequencialmente.
 
 ---
 
 ## Exemplos de Gráficos e Insights Obtidos
 
-Aqui estão alguns dos principais gráficos gerados no notebook, acompanhados de insights relevantes:
+### 1. Faturamento Total e Tendências Temporais por Loja
 
-### 1. Tendência de Faturamento Mensal por Loja
-- **Gráfico de Linha Interativo (Plotly):**
-  - Mostra o faturamento mensal de cada loja (Loja 1 a Loja 4) entre jan/2020 e mar/2023.
-  - Exemplo: ![Tendências de Faturamento](Imagens/plot2.png)
-- **Insights:**
-  - Picos de vendas em julho/2022 (~R$ 50.000–R$ 60.000), possivelmente devido a alta demanda por eletrônicos e móveis.
-  - Quedas significativas em junho/2021 e junho/2022 (~R$ 20.000), sugerindo baixa sazonalidade.
-  - Loja 4 apresenta picos menores e quedas mais frequentes, indicando desempenho inferior.
+- **Gráfico de barras:** Mostra o faturamento total de cada loja, permitindo identificar rapidamente a loja de menor desempenho.
+- **Gráfico de linhas (interativo):** Exibe a evolução mensal do faturamento de cada loja, revelando sazonalidades, picos e quedas ao longo dos anos.
+- **Insight:** Loja 4 apresenta o menor faturamento total e quedas frequentes ao longo do tempo, sugerindo menor potencial de crescimento.
 
-### 2. Vendas por Categoria de Produto
-- **Gráfico de Barras:**
-  - Compara o total de unidades vendidas por categoria (ex.: Móveis, Eletrônicos, Eletrodomésticos).
-  - Exemplo: ![Vendas por Categoria](Imagens/plot4.png)
-- **Insights:**
-  - Loja 4 depende fortemente de Móveis (20,4%) e Eletrônicos (19,1%), mas tem desempenho fraco em Eletrodomésticos e Instrumentos Musicais.
-  - Loja 1 lidera em diversificação de categorias, contribuindo para seu maior faturamento total (R$ 1,47 mi).
 
-### 3. Distribuição de Avaliações por Loja
-- **Gráfico de Pizza:**
-  - Exibe a média de avaliações dos clientes por loja.
-  - Exemplo: ![Distribuição de Avaliações](Imagens/plot5.png)
-- **Insights:**
-  - Loja 3 possui a melhor média de avaliações (4,0483), indicando alta satisfação do cliente.
-  - Loja 4, com 3,9958, está entre as piores, sugerindo problemas na experiência do cliente.
+### 2. Distribuição de Preço, Frete e Avaliação
+
+- **Histogramas e boxplots (interativos):** Permitem observar a dispersão e assimetria dos preços, fretes e avaliações por loja.
+- **Insight:** A maioria dos fretes está abaixo de R\$50, mas lojas com frete médio mais alto podem indicar ineficiências logísticas.
+
+
+### 3. Faturamento por Categoria e Produtos Mais Vendidos
+
+- **Gráfico de barras:** Compara o faturamento por categoria de produto em cada loja.
+- **Gráfico de barras:** Top 5 produtos mais vendidos por loja.
+- **Insight:** Loja 4 depende fortemente de poucas categorias, enquanto Loja 1 é mais diversificada e resiliente a oscilações.
+
+
+### 4. Avaliação Média por Loja
+
+- **Gráfico de barras:** Exibe a média de avaliações dos clientes por loja.
+- **Insight:** Loja 3 possui a melhor média de avaliações, enquanto Loja 4 tem uma das piores, indicando problemas de satisfação do cliente.
+
+
+### 5. Frete Médio e Proporção no Faturamento
+
+- **Gráfico de barras:** Mostra o frete médio por loja e sua proporção em relação ao faturamento.
+- **Insight:** Lojas com frete proporcionalmente alto podem ter margens reduzidas e desafios logísticos.
 
 ---
 
 ## Instruções para Executar o Notebook
 
-Siga os passos abaixo para reproduzir a análise no Google Colab:
+Siga os passos abaixo para reproduzir a análise no Google Colab ou ambiente Jupyter:
 
-1. **Acesse o Notebook:**
-   - Abra o arquivo `AluraStoreBr.ipynb` no Google Colab através deste [link](https://colab.research.google.com/drive/1IoRY3Mm_MKhmqnlqHWIPf17S8Qw0-pCB?usp=sharing) ou faça upload do arquivo manualmente.
+1. **Abra o notebook:**
+    - Faça upload do arquivo `AluraStoreBr.ipynb` para o Google Colab ou Jupyter Notebook.
+2. **Carregue os dados:**
+    - Faça upload dos arquivos `loja_1.csv`, `loja_2.csv`, `loja_3.csv`, `loja_4.csv` no mesmo ambiente.
+3. **Instale as dependências (caso necessário):**
 
-2. **Carregue os Dados:**
-   - Faça upload do arquivo `vendas_alurastorebr.csv` no ambiente do Colab:
-     - Clique no ícone de pasta à esquerda.
-     - Arraste o arquivo ou use o botão "Upload".
-   
-3. **Instale Dependências:**
-   - A primeira célula do notebook contém os comandos para instalar as bibliotecas necessárias (`pandas`, `matplotlib`, `plotly`). Execute-a com `Shift + Enter`.
+```python
+!pip install pandas matplotlib seaborn plotly
+```
 
-4. **Execute o Notebook:**
-   - Execute todas as células sequencialmente clicando em "Run All" no menu "Runtime" ou pressionando `Ctrl + F9`.
-   - Certifique-se de que o arquivo CSV esteja carregado antes de rodar as células de análise.
+4. **Execute as células sequencialmente:**
+    - Siga a ordem das células para garantir que todas as etapas do pipeline sejam realizadas corretamente.
+    - As visualizações interativas serão exibidas ao longo da execução.
+5. **Personalize a análise:**
+    - Modifique parâmetros das funções conforme necessário (ex: colunas analisadas, limites de outliers).
+    - Explore visualizações segmentadas por loja, categoria ou período.
 
 **Pré-requisitos:**
-- Conexão com a internet para o Google Colab.
-- As bibliotecas são instaladas automaticamente no ambiente, sem necessidade de configuração adicional.
+
+- Conexão com a internet para uso do Google Colab.
+- Não é necessário conhecimento avançado em Python, pois o notebook é autoexplicativo e modular.
 
 ---
 
 ## Conclusão
 
-Este notebook oferece uma análise detalhada e visualizações interativas que ajudam a entender o desempenho da AluraStoreBr. A recomendação final de vender a Loja 4 é baseada em seu baixo faturamento, falta de diversificação e menor satisfação do cliente. Para mais detalhes, explore o notebook!
+O notebook oferece uma análise robusta, visual e interativa do desempenho das lojas do Senhor João. Com base nos dados, a recomendação é vender a Loja 4, que apresenta baixo faturamento, menor diversificação e satisfação do cliente inferior. Todos os passos, gráficos e insights podem ser reproduzidos e adaptados conforme a necessidade do negócio.
